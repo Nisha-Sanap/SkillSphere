@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  @apply bg-slate-50 text-slate-900;
+}
+
+#root {
+  width: 100%;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+  
+  .card {
+    @apply glass rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 shadow-sm hover:shadow-primary-500/20;
+  }
+  
+  .btn-outline {
+    @apply border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300;
+  }
+}
